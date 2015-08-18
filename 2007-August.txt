@@ -1,0 +1,197 @@
+From trinitas-developer at lists.berlios.de  Thu Aug 16 15:17:46 2007
+From: trinitas-developer at lists.berlios.de (trinitas-developer at lists.berlios.de)
+Date: Thu, 16 Aug 2007 15:17:46 +0200
+Subject: [Trinitas-developer] Netzwerk Entwicklung die 1.
+Message-ID: <BCA184DBFEBA468B8070F5CA2C6D85A7@simonlap>
+
+Tachen,
+falls ihr es noch nicht wisst bin ich ein teil des developer teams =).
+Ich wurde beauftragt mich um die Netzwerk Geschichte, naja nach 2 Tagen
+einstellungen und unz?hligen Fehlmeldungen unter Vista. Habe ich es dann
+doch endlich geschafft. Ich habe mein erst compile mit RakNet und Irrlicht
+geschafft zwar nur der Sample Code, aber immerhin.
+Jetzt kann ich richtig durchstarten und werde mal ein bisschen
+weiterbasteln, der Rest sollte ein klacks sein ;-)
+ 
+Hier der screenshot:
+ 
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20070816/e4246cba/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Outlook.jpg
+Type: image/jpeg
+Size: 144594 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20070816/e4246cba/attachment.jpg>
+
+From trinitas-developer at lists.berlios.de  Thu Aug 30 22:54:45 2007
+From: trinitas-developer at lists.berlios.de (trinitas-developer at lists.berlios.de)
+Date: Thu, 30 Aug 2007 22:54:45 +0200
+Subject: [Trinitas-developer] Netzwerk Entwicklung die 2.
+Message-ID: <557885CB13DF413DB997E573ECDA7964@simonlap>
+
+So, ich habe mich mal ein bisschen mit Irrlicht und Raknet besch?ftigt, denn
+ich hatte die Aufgabe von Matthias etwas zu entwickeln.... Meine Aufgabe war
+das ich 3ecke generieren sollte die sich auf allen anderen programmen auch
+bewegen sobald ein User sie bewegt!
+ 
+Also habe ich mich rangemacht und bin zu dem folgenden Ergebnis gekommen
+(P.S.: Ich habe keine Dreiecke genommen, weil ich die bl?d fande denn ich
+wusste gerade aktuell nicht wie ich in Irrlicht 3ecke ausmale, da es
+eigentlich nicht in Irrlicht vorgesehen ist zumindest in der Funktion um
+3ecke zu generieren und hatte gerade auch kein Internet zu Hand!") =)
+ 
+LG euer Feuer =)
+ 
+
+ 
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20070830/ac6b941d/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Outlook.jpg
+Type: image/jpeg
+Size: 112591 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20070830/ac6b941d/attachment.jpg>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Outlook.jpg
+Type: image/jpeg
+Size: 96334 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20070830/ac6b941d/attachment-0001.jpg>
+
+From mail at projectconceptor.de  Fri Aug 31 19:18:39 2007
+From: mail at projectconceptor.de (Paradoxon)
+Date: Fri, 31 Aug 2007 19:18:39 +0200
+Subject: [Trinitas-developer] Netzwerk Entwicklung die 2.
+In-Reply-To: <557885CB13DF413DB997E573ECDA7964@simonlap>
+References: <557885CB13DF413DB997E573ECDA7964@simonlap>
+Message-ID: <46D84D6F.2050006@projectconceptor.de>
+
+He das sieht ja richtig gut aus!!!
+Hmm mit den Dreiecken.. hab ich mich wohl versprochen/ verschrieben... 
+Vierecke ware eigentlich auch in meine Gedanken...
+
+K?nntest du den sourcecode (also nur die cpp und .h Dateien) unter
+
+Trinitas\trunk\tests\network\RakeNetTest
+kopieren und dann ?ber Tortoise SVN einfach adden und danach svn commit 
+machen, dann k?nnen wir das alle mal ?ber Netzwerk antesten :)
+
+gby
+Matthias
+
+trinitas-developer at lists.berlios.de schrieb:
+> So, ich habe mich mal ein bisschen mit Irrlicht und Raknet 
+> besch?ftigt, denn ich hatte die Aufgabe von Matthias etwas zu 
+> entwickeln.... Meine Aufgabe war das ich 3ecke generieren sollte die 
+> sich auf allen anderen programmen auch bewegen sobald ein User sie bewegt!
+>  
+> Also habe ich mich rangemacht und bin zu dem folgenden Ergebnis 
+> gekommen (P.S.: Ich habe keine Dreiecke genommen, weil ich die bl?d 
+> fande denn ich wusste gerade aktuell nicht wie ich in Irrlicht 3ecke 
+> ausmale, da es eigentlich nicht in Irrlicht vorgesehen ist zumindest 
+> in der Funktion um 3ecke zu generieren und hatte gerade auch kein 
+> Internet zu Hand!") =)
+>  
+> LG euer Feuer =)
+>  
+>
+>  
+>
+> ------------------------------------------------------------------------
+
+-- 
+Matthias Lindner
+Lazarettstr. 10
+
+45127 Essen
+
+Tel/Fax.: 0201-2480986
+Mail:	all4god at web.de
+
+www.online-mit-gott.de
+www.fishers-girl.de
+www.projectconceptor.de
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20070831/a198c991/attachment.html>
+
+From simonhoss at googlemail.com  Fri Aug 31 22:38:59 2007
+From: simonhoss at googlemail.com (=?ISO-8859-1?Q?Simon_Ho=DF?=)
+Date: Fri, 31 Aug 2007 22:38:59 +0200
+Subject: [Trinitas-developer] Netzwerk Entwicklung die 2.
+In-Reply-To: <46D84D6F.2050006@projectconceptor.de>
+References: <557885CB13DF413DB997E573ECDA7964@simonlap>
+	<46D84D6F.2050006@projectconceptor.de>
+Message-ID: <ce6499060708311338o23f1ee8m1646606694fa59dd@mail.gmail.com>
+
+jo werde ich machen... muss noch ein paar kleine Fehler am Server
+korrigieren ich wusste da eine Funktion nicht auswendig die ich brauchte und
+ich hatte ja auch kein internet verf?gbar.... wird also noch gemacht!
+
+Am 31.08.07 schrieb Paradoxon <mail at projectconceptor.de>:
+>
+>  He das sieht ja richtig gut aus!!!
+> Hmm mit den Dreiecken.. hab ich mich wohl versprochen/ verschrieben...
+> Vierecke ware eigentlich auch in meine Gedanken...
+>
+> K?nntest du den sourcecode (also nur die cpp und .h Dateien) unter
+>
+> Trinitas\trunk\tests\network\RakeNetTest
+> kopieren und dann ?ber Tortoise SVN einfach adden und danach svn commit
+> machen, dann k?nnen wir das alle mal ?ber Netzwerk antesten :)
+>
+> gby
+> Matthias
+>
+> trinitas-developer at lists.berlios.de schrieb:
+>
+> So, ich habe mich mal ein bisschen mit Irrlicht und Raknet besch?ftigt,
+> denn ich hatte die Aufgabe von Matthias etwas zu entwickeln.... Meine
+> Aufgabe war das ich 3ecke generieren sollte die sich auf allen anderen
+> programmen auch bewegen sobald ein User sie bewegt!
+>
+> Also habe ich mich rangemacht und bin zu dem folgenden Ergebnis gekommen (
+> P.S.: Ich habe keine Dreiecke genommen, weil ich die bl?d fande denn ich
+> wusste gerade aktuell nicht wie ich in Irrlicht 3ecke ausmale, da es
+> eigentlich nicht in Irrlicht vorgesehen ist zumindest in der Funktion um
+> 3ecke zu generieren und hatte gerade auch kein Internet zu Hand!") =)
+>
+> LG euer Feuer =)
+>
+>
+>
+>
+>  ------------------------------
+>
+>
+> --
+> Matthias Lindner
+> Lazarettstr. 10
+>
+> 45127 Essen
+>
+> Tel/Fax.: 0201-2480986
+> Mail:	all4god at web.de
+> www.online-mit-gott.dewww.fishers-girl.dewww.projectconceptor.de
+>
+>
+> _______________________________________________
+> Trinitas-developer mailing list
+> Trinitas-developer at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/trinitas-developer
+>
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20070831/2623be63/attachment.html>
+

@@ -1,0 +1,78 @@
+From dev at projectconceptor.de  Tue Dec  2 09:51:41 2008
+From: dev at projectconceptor.de (Paradoxon)
+Date: Tue, 2 Dec 2008 09:51:41 +0100
+Subject: [Trinitas-developer] Masterserver - Kurzinfo Entwicklungsstand
+In-Reply-To: <4919D3A4.1080608@oswald-crossmedia.de>
+References: <4919900B.3030407@oswald-crossmedia.de>
+	<A98D27DC-8817-47B6-A680-028A9D9723E0@projectconceptor.de>
+	<4919D3A4.1080608@oswald-crossmedia.de>
+Message-ID: <B535968D-6C34-4B96-9D89-B53BBC588883@projectconceptor.de>
+
+Hi Leute,
+
+nur kurze Infos
+der Masterservertest funktioniert rudiment?r (und derzeit nur im  
+Localhost).
+
+trunk/tests/network/MasterServerTest/
+
+Masterserver ist der Server an dem sich alle
+Spieleserver anmelden und der dann die Listen
+von Spieleservern entsprechend an die Clients
+verteilt (so dass man so ?hnliche Listen bekommt wie bei Quake
+oder so.)
+Masterserver ist der zentrale Knotenpunkt im Internet.
+
+Es gibt noch viele Herausforderungen
+1. Derzeit nur unter Mac compiliert und getestet.
+2. Targets f?r Linux und Win noch nicht angepasst (es fehlen die libs  
+und eventuell einige gcc argumente und / oder defines)
+
+Masterserver:
+    * l?sst sich derzeit nicht steuern (da Tastatureingabe unter  
+Unixen immer blockiernd funktioniert- ein entsprechender workaround  
+scheint bis jetzt noch nicht zu funktionieren)
+   * derzeit nur minimale Grundfunktionalit?t
+  * derzeit nur auf Localhost ausgelegt (f?r einen richtigen Server  
+sollten aber nur wenige ?nderungen in MasterGlobals.h notwendig sein)
+  * ein (oder mehrere) Speicherlecks
+  * Code nicht ordentlich dokumentiert
+  * vieles wichtiges schlicht noch nicht implementiert
+
+MasterClient
+* braucht ?ber 50% CPU Ressourcen
+* nur Grundfunktionalit?t implementiert
+* Code nicht ordentlich dokumentiert
+  * vieles wichtiges schlicht noch nicht implementiert
+	* lesen von cfg dateien (f?r den Server)
+	* ......
+* ist noch mehr auf Testen ausgelegt, weil er auch die Table abfragt  
+(das m?ssten nur die Clienten)
+* Beschreibung wird noch nicht ?bertragen.
+
+=== Kurzbericht ===
+Anonsten ist ganz wichtig f?r viele Beispielequelltext von RakNet,  
+dass man sie selber auf die aktuelle Version
+portieren muss
+daf?r befindet sich im Raknet verzeichniss (wenn man die source  
+ausgecheckt hat zumindest)
+die wichtige Datei 2.x_to_3.x_upgrade.txt
+in der alle wichtigen ?nderungen drin stehen.
+
+Wichtig ist au?erdem noch die Balance zwichen
+RakPeer->Receive
+und
+RakPeer->DeallocatePacket
+
+Ruft man Deallocate einmal zu viel auf, gibt es ein Segmentation fault
+aber ruft man es zu wenig auf, dann werden Pakete nie aus der FiFO-queue
+ausgelesen und man l?fut immer nur schleifen mit dem einen selben Paket.
+
+Hier muss ich noch mal alles durcschauen ob alles in Balance ist ;-)
+
+gby
+Matthias
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20081202/f4ce1a6b/attachment.html>
+

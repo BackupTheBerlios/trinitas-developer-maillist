@@ -1,0 +1,91 @@
+From mail at projectconceptor.de  Tue Jan  1 22:02:01 2008
+From: mail at projectconceptor.de (Paradoxon)
+Date: Tue, 01 Jan 2008 22:02:01 +0100
+Subject: [Trinitas-developer] =?iso-8859-15?q?brauche_eure_Hilfe_f=FCr_Cla?=
+	=?iso-8859-15?q?ssendesign?=
+Message-ID: <477AAA49.1010801@projectconceptor.de>
+
+He Leute,
+
+wir werden jetzt langsam mit dem Klassendesign anfangen.
+D.h. es geht richtig los .. so mit Spieleprogramierung. :)
+
+Ich warte zwar noch auf einige Mokups oder Ergebnisse von Mokups,
+aber das wird sich hoffentlich bald geben.
+
+Aber f?r das Klassendesign Ben?tigen wir Ideen bzw. Infos vor allem f?r 
+die Leute,
+die sich in den entsprechenden  Bereichen eingearbeitet haben.
+
+Also erstens die Klasse der Objekte im Spiel. Also so was wie der Spieler,
+andere Spieler, Gegenst?nde, Werkzeuge usw.
+Hierbei ist vor allem wichtig welche Daten wir bereits in den entsprechenden
+Engineformaten vorliegen haben..
+
+Wir werden wahrscheinlich eine Grundklasse ben?tigen, die nur die
+bounding box oder ein sehr niedrig aufgel?stest collisionsmesh hat. Ich 
+nenns mal BasicObjekt
+
+Das ist notwendig, weil der Server nur die Collisionsmeshs ben?tigt um 
+Dinge auszurechnen
+Da w?re es nicht so sinnvoll auch die Meshes und Texturen zu laden.
+
+BasicObjekt
+ >|- mStatus //aktueller Status in dem sich das Objekt befindet
+ >|-collisionsMeshVector //vector mit den zum Status passenden 
+Collsisionsmeshes
+ >|-??? (bitte vervollst?ndigen)
+
+NormalesObjekt abgeleitet von BasicObjekt
+ >|- renderMeshVector //vector mit allen RenderMeshes
+ >|- texturVector
+ >|-shaderVector
+ >|-soundEffektVector
+
+Oder k?nnen wir einfach das Normale Objekt von einem Irrlicht objekt 
+ableiten?
+welches bereits alle diese F?higkeiten besitzt?
+
+Simon, was sagst du, du hast ja schon mir Irrlicht gearbeitet und sogar 
+schon
+ein Animierte Figur eingebunden...
+
+
+Dann noch eine Frage/ Idee oder wie auch immer
+Wir br?uchten unser eigenes MapObjekt oder?
+
+MapObjekt abgeleitet von BasicObjekt
+ >|- charakterVector
+ >|- objekteVector
+ >|- maplogikVector (quests, Map ziele usw.)
+ >|- soundVector (Songs usw)
+ >|- Heighmap
+ >|- ...??
+
+
+Alles nur angedachte Sachen, ich hoffe, ihr k?nnt mir einige Ideen oder 
+Richtigstellungen zur?cksenden.
+
+Gottes Segen
+Matthias
+
+
+
+
+
+-- 
+Matthias Lindner
+Lazarettstr. 10
+
+45127 Essen
+
+Tel/Fax.: 0201-2480986
+
+
+www.online-mit-gott.de
+trinitas.berlios.de
+www.fishers-girl.de
+www.projectconceptor.de
+
+
+

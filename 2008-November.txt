@@ -1,0 +1,209 @@
+From dev at projectconceptor.de  Mon Nov 10 23:37:07 2008
+From: dev at projectconceptor.de (Paradoxon)
+Date: Mon, 10 Nov 2008 23:37:07 +0100
+Subject: [Trinitas-developer] Master Server
+Message-ID: <10206C84-9754-475F-9657-4F270F874C78@projectconceptor.de>
+
+Hi Leute,
+
+ich hab mal angefangen nen Masterserver test zu schreiben!
+
+Masterserver ist der server zu dem alle gestarteten Spieleserver und  
+alle Clienten sich verbinden, damit
+dieser die Informationen ?ber alle verf?gbaren spieleserver  
+weitergeben kann.
+
+Derzeit habe ich zu eine gro?teil "prinzipell" den Masterserver zum  
+testen fertig.
+
+Bei mir gibt es allerdings beim Ausf?hren einen Segementation fault  
+(verursacher ist Zeiel 94
+      p=rakPeer->Receive(); in MasterServer.cpp
+
+Zu dem weis ich nicht inweiweit das ganze unter WIndows oder Linux  
+compiliert (hier m?ssten noch in die entsprechenden
+Targets die Libs eingetagen werden)
+
+Bei Gelegenheit folgen dann noch infos ?ber meine Erkenntnisse w?rend  
+des  MasterServer schreibens
+
+Ziel ist, dass wir in 4 Woche erste Testst mit dem MasterServer in der  
+freien Wildbahn durchf?hren k?nnen
+(also erstmalig ?ber das Internet mit einem Clienten direkt verkn?pfen)
+
+gby
+Matthias
+
+
+
+From jo at oswald-crossmedia.de  Tue Nov 11 15:00:43 2008
+From: jo at oswald-crossmedia.de (Juergen Oswald)
+Date: Tue, 11 Nov 2008 15:00:43 +0100
+Subject: [Trinitas-developer] =?iso-8859-15?q?mehrere_Texturen_f=FCr_ein_O?=
+ =?iso-8859-15?q?bjekt_in_irredit?=
+Message-ID: <4919900B.3030407@oswald-crossmedia.de>
+
+Hallo Leute,
+
+wei? jemand ob es m?glich ist,
+einem importiertem Objekt in irredit,
+mehr als eine Textur zuzuweisen?
+
+Z.B f?r die Figur: Eine f?r Gesicht, H?nde und F??e
+und eine f?r Kleidung und Utensilien.
+
+Ich hab die Figur importiert, es wir aber
+nur eine Textur zugewiesen und angezeigt.
+
+Danke
+Gru? und Segen
+Juergen
+
+
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20081111/b30e1db2/attachment.html>
+
+From dev at projectconceptor.de  Tue Nov 11 19:21:54 2008
+From: dev at projectconceptor.de (Paradoxon)
+Date: Tue, 11 Nov 2008 19:21:54 +0100
+Subject: [Trinitas-developer]
+ =?iso-8859-1?q?mehrere_Texturen_f=FCr_ein_Ob?=
+ =?iso-8859-1?q?jekt_in_irredit?=
+In-Reply-To: <4919900B.3030407@oswald-crossmedia.de>
+References: <4919900B.3030407@oswald-crossmedia.de>
+Message-ID: <A98D27DC-8817-47B6-A680-028A9D9723E0@projectconceptor.de>
+
+Prinzipell ist es m?glich so etwas in Irrlicht zu machen (soweit ich  
+da die englischen Foren richtig verstanden habe).
+allerdings irredit scheint damit Probleme zu haben:
+http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=29399&sid=227ec348fccd8f28fab41ead8476b120
+
+Prinzipiell ist es,soweit ich weiss, aber eher ung?nstig eine Objekt  
+Textur aus mehreren Teilen zusammenzusetzen.
+Korrigiert mich wenn ich hier falsch liege
+
+?blich sind hier UV Maps als Texturen.
+gby
+Matthias
+
+Am 11.11.2008 um 15:00 schrieb Juergen Oswald:
+
+> Hallo Leute,
+>
+> wei? jemand ob es m?glich ist,
+> einem importiertem Objekt in irredit,
+> mehr als eine Textur zuzuweisen?
+>
+> Z.B f?r die Figur: Eine f?r Gesicht, H?nde und F??e
+> und eine f?r Kleidung und Utensilien.
+>
+> Ich hab die Figur importiert, es wir aber
+> nur eine Textur zugewiesen und angezeigt.
+>
+> Danke
+> Gru? und Segen
+> Juergen
+>
+>
+>
+> _______________________________________________
+> Trinitas-developer mailing list
+> Trinitas-developer at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/trinitas-developer
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20081111/e191ff9e/attachment.html>
+
+From trinitas at oswald-crossmedia.de  Tue Nov 11 19:49:08 2008
+From: trinitas at oswald-crossmedia.de (Juergen Oswald)
+Date: Tue, 11 Nov 2008 19:49:08 +0100
+Subject: [Trinitas-developer]
+ =?iso-8859-1?q?mehrere_Texturen_f=FCr_ein_Ob?=
+ =?iso-8859-1?q?jekt_in_irredit?=
+In-Reply-To: <A98D27DC-8817-47B6-A680-028A9D9723E0@projectconceptor.de>
+References: <4919900B.3030407@oswald-crossmedia.de>
+	<A98D27DC-8817-47B6-A680-028A9D9723E0@projectconceptor.de>
+Message-ID: <4919D3A4.1080608@oswald-crossmedia.de>
+
+ >> Prinzipiell ist es,soweit ich weiss, aber eher ung?nstig
+ >> eine Objekt Textur aus mehreren Teilen zusammenzusetzen.
+ >> Korrigiert mich wenn ich hier falsch liege
+
+Ich muss es halt wissen, damit ich die Daten entsprechen aufbereiten kann.
+Ich frag weil ich vor kurzem eine Figur mit 2 Texturen f?r ein Game 
+gesehen hab,
+und es aufw?ndig is des alles auch noch proportional unterschiedlich,
+weil wichtig <=> unwichtig, auf einer Textur unterzubringen.
+
+=> dann hei?t das wohl: Eine Textur pro Objekt
+
+
+ >> ?blich sind hier UV Maps als Texturen.
+
+Durch die UV-Map wird die Stelle  festgelegt
+an der sich die Textur - bzw. ein bestimmter Pixel einer Textur -
+auf der Geometrie befindet.
+Die UV-Map muss im 3D-Prog erstellt werden,
+und wird mit der Geometrie (z.B. OBJ) mitgeliefert.
+
+
+Gru?
+Juergen
+
+
+Paradoxon schrieb:
+> Prinzipell ist es m?glich so etwas in Irrlicht zu machen (soweit ich 
+> da die englischen Foren richtig verstanden habe).
+> allerdings irredit scheint damit Probleme zu haben:
+> http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=29399&sid=227ec348fccd8f28fab41ead8476b120 
+> <http://irrlicht.sourceforge.net/phpBB2/viewtopic.php?t=29399&sid=227ec348fccd8f28fab41ead8476b120>
+>
+> Prinzipiell ist es,soweit ich weiss, aber eher ung?nstig eine Objekt 
+> Textur aus mehreren Teilen zusammenzusetzen.
+> Korrigiert mich wenn ich hier falsch liege
+>
+> ?blich sind hier UV Maps als Texturen.
+> gby
+> Matthias
+>
+> Am 11.11.2008 um 15:00 schrieb Juergen Oswald:
+>
+>> Hallo Leute,
+>>
+>> wei? jemand ob es m?glich ist,
+>> einem importiertem Objekt in irredit,
+>> mehr als eine Textur zuzuweisen?
+>>
+>> Z.B f?r die Figur: Eine f?r Gesicht, H?nde und F??e
+>> und eine f?r Kleidung und Utensilien.
+>>
+>> Ich hab die Figur importiert, es wir aber
+>> nur eine Textur zugewiesen und angezeigt.
+>>
+>> Danke
+>> Gru? und Segen
+>> Juergen
+>>
+>>
+>>
+>> _______________________________________________
+>> Trinitas-developer mailing list
+>> Trinitas-developer at lists.berlios.de 
+>> <mailto:Trinitas-developer at lists.berlios.de>
+>> https://lists.berlios.de/mailman/listinfo/trinitas-developer
+>
+> ------------------------------------------------------------------------
+>
+> _______________________________________________
+> Trinitas-developer mailing list
+> Trinitas-developer at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/trinitas-developer
+>   
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20081111/21d5a6ae/attachment.html>
+

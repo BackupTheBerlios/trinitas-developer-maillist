@@ -1,0 +1,378 @@
+From Simon.Hoss at gmx.de  Mon Sep  3 13:13:15 2007
+From: Simon.Hoss at gmx.de (=?iso-8859-1?Q?Simon_Ho=DF?=)
+Date: Mon, 3 Sep 2007 13:13:15 +0200
+Subject: [Trinitas-developer] Grafik Entwicklung die 1.
+Message-ID: <2210AE86F3EB44AE97643CF0576027E8@simonlap>
+
+Hallo,
+zurzeit besch?ftige ich mich mit grafik entwicklung und habe mich da ein
+beispiel angenommen.
+Mein erstes Ziel ist es auf einer landschaft zu laufen.... dies ist gegl?ckt
+wie ihr auch im Screenshot erkennen k?nnt! =)
+ 
+Werde das ganze jetzt als n?chstes mit einem Objekt machen, da wir ja in
+third person spielen!
+ 
+Werde dieses kleine Beispiel mal hochladen!
+ 
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20070903/08cf4ed5/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Outlook.jpg
+Type: image/jpeg
+Size: 20307 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20070903/08cf4ed5/attachment.jpg>
+
+From Simon.Hoss at gmx.de  Mon Sep  3 23:10:04 2007
+From: Simon.Hoss at gmx.de (=?iso-8859-1?Q?Simon_Ho=DF?=)
+Date: Mon, 3 Sep 2007 23:10:04 +0200
+Subject: [Trinitas-developer] Grafik Entwicklung die 2.
+Message-ID: <7CA3D2731BD8447EA2739949C8A7B694@simonlap>
+
+So ich habe es geschafft, die 3rd Person Ansicht funktioniert nun! N?chster
+Schritt w?re Bug Bereinigung, denn aktuell flagert der Mensch (eine Box)
+noch ganz sch?n, mal schauen was das ist.
+Desweiteren werde ich vorraussichtlich das ganze mal mit Raknet zusammen
+tun!
+ 
+Hochladen werde ich es noch nicht, da der Code noch durch die ganzen Tests
+sehr un?bersichtlich ist.
+ 
+Gr??le
+ 
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20070903/ff33b069/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Outlook.jpg
+Type: image/jpeg
+Size: 33048 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20070903/ff33b069/attachment.jpg>
+
+From Simon.Hoss at gmx.de  Tue Sep  4 16:31:55 2007
+From: Simon.Hoss at gmx.de (=?iso-8859-1?Q?Simon_Ho=DF?=)
+Date: Tue, 4 Sep 2007 16:31:55 +0200
+Subject: [Trinitas-developer] Grafik Entwicklung die 3.
+Message-ID: <3F70D3FD53184B81A090558F7CFBE684@simonlap>
+
+So,
+wie ihr im screenshot sehen k?nnt habe ich es geschafft jetzt auch noch
+raknet reinzubringen....
+d.h. man sieht sich wenn man durch die gegend ?hm rutscht :-)
+ 
+muss jetzt allerdings noch ein paar perfomance sachen vornehmen, denn wir
+ihr sehen k?nnt habe ich hier nur 13 FPS und das ist seeeeeeehr wenig!!!!
+ 
+wen es interessiert hier meine daten:
+CPU: DuoT7300 2x2.0Ghz
+Arbeitsspeicher: 2048MB
+Grafikkarte: Gefore 8600m GS; 256MB Ram
+ 
+Also ihr seht eigentlich m?sste mein Laptop locker damit fertig werden, wie
+gesagt werde schauen was sich da machen l?sst habe auch schon ein paar
+ideen!
+ 
+ 
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20070904/e8265057/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Outlook.jpg
+Type: image/jpeg
+Size: 33993 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20070904/e8265057/attachment.jpg>
+
+From Simon.Hoss at gmx.de  Sat Sep  8 18:11:23 2007
+From: Simon.Hoss at gmx.de (=?iso-8859-1?Q?Simon_Ho=DF?=)
+Date: Sat, 8 Sep 2007 18:11:23 +0200
+Subject: [Trinitas-developer] Grafik Entwicklung die 3.
+Message-ID: <660A55DA8FDB4CC098EAA88CAEC8141B@simonlap>
+
+so, tachen
+also ich habe es geschafft verschiedene Objekte einzubinden und habe noch
+eine aktzeptable FPS, ich glaube aber auch das die niedrige FPS mit Vista
+zusammen h?ngt und das die Treiber noch nicht aktualisiert sind...
+denn ich habe auf einem anderen Rechner der schlechter ist wie mein Laptop
+eine h?here FPS.... dazu muss man sagen, da ist noch XP drauf, nichts desto
+trotz hei?t es optimieren, optimieren, optimieren....
+ 
+mein Beispiel funktioniert auch mit Netzwerk, der 2. Glotz ist ein anderer
+Computer
+ 
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20070908/87f8c930/attachment.html>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Outlook.jpg
+Type: image/jpeg
+Size: 35156 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20070908/87f8c930/attachment.jpg>
+
+From Simon.Hoss at gmx.de  Sat Sep  8 18:17:48 2007
+From: Simon.Hoss at gmx.de (=?iso-8859-1?Q?Simon_Ho=DF?=)
+Date: Sat, 8 Sep 2007 18:17:48 +0200
+Subject: [Trinitas-developer] =?iso-8859-1?q?ich_mein_nat=FCrlich_die_4=2E?=
+	=?iso-8859-1?q?_oder_wegen_mir_auch_3=2E1_=3D=29_-eom?=
+Message-ID: <EDB5E8CA63A441F9BAC62E0BFA850BAD@simonlap>
+
+ 
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20070908/7088a505/attachment.html>
+
+From mail at projectconceptor.de  Sat Sep  8 19:47:13 2007
+From: mail at projectconceptor.de (Paradoxon)
+Date: Sat, 08 Sep 2007 19:47:13 +0200
+Subject: [Trinitas-developer] Grafik Entwicklung die 4.
+In-Reply-To: <660A55DA8FDB4CC098EAA88CAEC8141B@simonlap>
+References: <660A55DA8FDB4CC098EAA88CAEC8141B@simonlap>
+Message-ID: <46E2E021.2000108@projectconceptor.de>
+
+He Simon
+
+Super arbeit,
+kannst du uns sagen, welche FPS du auf deinem XP-System bekommst???
+und welche Specs das System hat??
+Au?erdem mit welche Aufl?sung f?hrst du die Tests???
+W?re gut um den Umfang absch?tzen zu k?nnen.
+
+
+Und was oder hat sich was ver?ndert, wenn du nen gr??eres Sleep 
+eingebaut hast?? (sorry hab mein Entwicklungssystem noch nicht 
+aufgesetzt :))
+
+K?nntest du auserdem mal in deiner Prozessliste schauen, ob irrlicht und 
+das Raknet nen eigenen Thread aufmacht ?? (eventuell hilft daf?r:)
+http://www.microsoft.com/technet/sysinternals/Utilities/ProcessExplorer.mspx
+
+
+Weiter so!
+wir sind Stolz auf dich...!
+
+
+
+Simon Ho? schrieb:
+> so, tachen
+> also ich habe es geschafft verschiedene Objekte einzubinden und habe 
+> noch eine aktzeptable FPS, ich glaube aber auch das die niedrige FPS 
+> mit Vista zusammen h?ngt und das die Treiber noch nicht aktualisiert 
+> sind...
+> denn ich habe auf einem anderen Rechner der schlechter ist wie mein 
+> Laptop eine h?here FPS.... dazu muss man sagen, da ist noch XP drauf, 
+> nichts desto trotz hei?t es optimieren, optimieren, optimieren....
+>  
+> mein Beispiel funktioniert auch mit Netzwerk, der 2. Glotz ist ein 
+> anderer Computer
+>  
+> ------------------------------------------------------------------------
+>
+> _______________________________________________
+> Trinitas-developer mailing list
+> Trinitas-developer at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/trinitas-developer
+>   
+
+
+-- 
+Matthias Lindner
+Lazarettstr. 10
+
+45127 Essen
+
+Tel/Fax.: 0201-2480986
+Mail:	all4god at web.de
+
+www.online-mit-gott.de
+www.fishers-girl.de
+www.projectconceptor.de
+
+
+
+From simonhoss at googlemail.com  Sun Sep  9 12:54:14 2007
+From: simonhoss at googlemail.com (=?ISO-8859-1?Q?Simon_Ho=DF?=)
+Date: Sun, 9 Sep 2007 12:54:14 +0200
+Subject: [Trinitas-developer] Grafik Entwicklung die 4.
+In-Reply-To: <46E2E021.2000108@projectconceptor.de>
+References: <660A55DA8FDB4CC098EAA88CAEC8141B@simonlap>
+	<46E2E021.2000108@projectconceptor.de>
+Message-ID: <ce6499060709090354q4431fc14laaecae2688fc7394@mail.gmail.com>
+
+Also,
+auf dem XP-System kriege ich ca. 100-120 FPS
+Das System hat:
+1,83 Athlon Duo
+2048 MB Ram
+256 MB Graka (Nvidia)
+
+Die Tests sind in 1024*768
+
+ge?ndert hat sich legedlich nur das ich die Vierecke anders verarbeite,
+vorher hab ich sie einfach nur so reingeschoben und da war dann noch kein
+culling, jetzt wird das culling automatisch angewendet.
+
+Das Test Programm legt nen eigenen Thread an!
+
+Noch Fragen?
+
+:)
+
+Am 08.09.07 schrieb Paradoxon <mail at projectconceptor.de>:
+>
+> He Simon
+>
+> Super arbeit,
+> kannst du uns sagen, welche FPS du auf deinem XP-System bekommst???
+> und welche Specs das System hat??
+> Au?erdem mit welche Aufl?sung f?hrst du die Tests???
+> W?re gut um den Umfang absch?tzen zu k?nnen.
+>
+>
+> Und was oder hat sich was ver?ndert, wenn du nen gr??eres Sleep
+> eingebaut hast?? (sorry hab mein Entwicklungssystem noch nicht
+> aufgesetzt :))
+>
+> K?nntest du auserdem mal in deiner Prozessliste schauen, ob irrlicht und
+> das Raknet nen eigenen Thread aufmacht ?? (eventuell hilft daf?r:)
+>
+> http://www.microsoft.com/technet/sysinternals/Utilities/ProcessExplorer.mspx
+>
+>
+> Weiter so!
+> wir sind Stolz auf dich...!
+>
+>
+>
+> Simon Ho? schrieb:
+> > so, tachen
+> > also ich habe es geschafft verschiedene Objekte einzubinden und habe
+> > noch eine aktzeptable FPS, ich glaube aber auch das die niedrige FPS
+> > mit Vista zusammen h?ngt und das die Treiber noch nicht aktualisiert
+> > sind...
+> > denn ich habe auf einem anderen Rechner der schlechter ist wie mein
+> > Laptop eine h?here FPS.... dazu muss man sagen, da ist noch XP drauf,
+> > nichts desto trotz hei?t es optimieren, optimieren, optimieren....
+> >
+> > mein Beispiel funktioniert auch mit Netzwerk, der 2. Glotz ist ein
+> > anderer Computer
+> >
+> > ------------------------------------------------------------------------
+> >
+> > _______________________________________________
+> > Trinitas-developer mailing list
+> > Trinitas-developer at lists.berlios.de
+> > https://lists.berlios.de/mailman/listinfo/trinitas-developer
+> >
+>
+>
+> --
+> Matthias Lindner
+> Lazarettstr. 10
+>
+> 45127 Essen
+>
+> Tel/Fax.: 0201-2480986
+> Mail:   all4god at web.de
+>
+> www.online-mit-gott.de
+> www.fishers-girl.de
+> www.projectconceptor.de
+>
+> _______________________________________________
+> Trinitas-developer mailing list
+> Trinitas-developer at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/trinitas-developer
+>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20070909/63bb6424/attachment.html>
+
+From mail at projectconceptor.de  Sun Sep  9 13:46:36 2007
+From: mail at projectconceptor.de (Paradoxon)
+Date: Sun, 09 Sep 2007 13:46:36 +0200
+Subject: [Trinitas-developer] Grafik Entwicklung die 4.
+In-Reply-To: <ce6499060709090354q4431fc14laaecae2688fc7394@mail.gmail.com>
+References: <660A55DA8FDB4CC098EAA88CAEC8141B@simonlap>	<46E2E021.2000108@projectconceptor.de>
+	<ce6499060709090354q4431fc14laaecae2688fc7394@mail.gmail.com>
+Message-ID: <46E3DD1C.50704@projectconceptor.de>
+
+Das das Testprogramm nen eigenen Thread anlegt ist klar.. muss es ja, 
+sonst w?re es nicht existen (au?er wenn es Windows umgehen w?rde :-D)
+Aber meine Frage ist.. ob zus?tzlich zu dem Thread ein Renderthread von 
+irrlicht angelegt wird (also praktisch zwei Threads... eins f?r 
+Programmsteuerung und eins f?r Rendering...)
+
+Jo und noch die Frage ob und wie sich FPS ver?ndern wenn du die 
+Sleepzeit (eventuell radikal (100 - 1000)) erh?hst.. :)
+
+Danke f?r die Infos...
+
+Simon Ho? schrieb:
+> Also,
+> auf dem XP-System kriege ich ca. 100-120 FPS
+> Das System hat:
+> 1,83 Athlon Duo
+> 2048 MB Ram
+> 256 MB Graka (Nvidia)
+>
+> Die Tests sind in 1024*768
+>
+> ge?ndert hat sich legedlich nur das ich die Vierecke anders 
+> verarbeite, vorher hab ich sie einfach nur so reingeschoben und da war 
+> dann noch kein culling, jetzt wird das culling automatisch angewendet.
+>
+> Das Test Programm legt nen eigenen Thread an!
+>
+> Noch Fragen?
+>
+> :)
+>
+
+
+-- 
+Matthias Lindner
+Lazarettstr. 10
+
+45127 Essen
+
+Tel/Fax.: 0201-2480986
+Mail:	all4god at web.de
+
+www.online-mit-gott.de
+www.fishers-girl.de
+www.projectconceptor.de
+
+
+
+From Simon.Hoss at gmx.de  Mon Sep 10 10:56:46 2007
+From: Simon.Hoss at gmx.de (=?iso-8859-1?Q?Simon_Ho=DF?=)
+Date: Mon, 10 Sep 2007 10:56:46 +0200
+Subject: [Trinitas-developer] Grafik Entwicklung die 5.
+Message-ID: <9303AB6E119449379566913F37111965@simonlap>
+
+Moin,
+also habe einen weiteren Meilenstein geschafft,
+ich habe es geschafft das ich ein Objekt was ich vorher animiert habe, auch
+in irrlicht animiert habe.
+Dies ist sehr wichtig denn schlie?lich soll ja die Landschaft lebendig
+werden.
+ 
+Was als n?chstes kommt, verrate ich noch nicht =)
+ 
+Gru?
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20070910/e0bc4e12/attachment.html>
+

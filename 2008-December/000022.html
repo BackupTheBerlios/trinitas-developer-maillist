@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Trinitas-developer] Masterserver - Kurzinfo Entwicklungsstand
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/trinitas-developer/2008-December/index.html" >
+   <LINK REL="made" HREF="mailto:trinitas-developer%40lists.berlios.de?Subject=Re%3A%20%5BTrinitas-developer%5D%20Masterserver%20-%20Kurzinfo%20Entwicklungsstand&In-Reply-To=%3CB535968D-6C34-4B96-9D89-B53BBC588883%40projectconceptor.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Trinitas-developer] Masterserver - Kurzinfo Entwicklungsstand</H1>
+    <B>Paradoxon</B> 
+    <A HREF="mailto:trinitas-developer%40lists.berlios.de?Subject=Re%3A%20%5BTrinitas-developer%5D%20Masterserver%20-%20Kurzinfo%20Entwicklungsstand&In-Reply-To=%3CB535968D-6C34-4B96-9D89-B53BBC588883%40projectconceptor.de%3E"
+       TITLE="[Trinitas-developer] Masterserver - Kurzinfo Entwicklungsstand">dev at projectconceptor.de
+       </A><BR>
+    <I>Tue Dec  2 09:51:41 CET 2008</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#22">[ date ]</a>
+              <a href="thread.html#22">[ thread ]</a>
+              <a href="subject.html#22">[ subject ]</a>
+              <a href="author.html#22">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Leute,
+
+nur kurze Infos
+der Masterservertest funktioniert rudiment&#228;r (und derzeit nur im  
+Localhost).
+
+trunk/tests/network/MasterServerTest/
+
+Masterserver ist der Server an dem sich alle
+Spieleserver anmelden und der dann die Listen
+von Spieleservern entsprechend an die Clients
+verteilt (so dass man so &#228;hnliche Listen bekommt wie bei Quake
+oder so.)
+Masterserver ist der zentrale Knotenpunkt im Internet.
+
+Es gibt noch viele Herausforderungen
+1. Derzeit nur unter Mac compiliert und getestet.
+2. Targets f&#252;r Linux und Win noch nicht angepasst (es fehlen die libs  
+und eventuell einige gcc argumente und / oder defines)
+
+Masterserver:
+    * l&#228;sst sich derzeit nicht steuern (da Tastatureingabe unter  
+Unixen immer blockiernd funktioniert- ein entsprechender workaround  
+scheint bis jetzt noch nicht zu funktionieren)
+   * derzeit nur minimale Grundfunktionalit&#228;t
+  * derzeit nur auf Localhost ausgelegt (f&#252;r einen richtigen Server  
+sollten aber nur wenige &#196;nderungen in MasterGlobals.h notwendig sein)
+  * ein (oder mehrere) Speicherlecks
+  * Code nicht ordentlich dokumentiert
+  * vieles wichtiges schlicht noch nicht implementiert
+
+MasterClient
+* braucht &#252;ber 50% CPU Ressourcen
+* nur Grundfunktionalit&#228;t implementiert
+* Code nicht ordentlich dokumentiert
+  * vieles wichtiges schlicht noch nicht implementiert
+	* lesen von cfg dateien (f&#252;r den Server)
+	* ......
+* ist noch mehr auf Testen ausgelegt, weil er auch die Table abfragt  
+(das m&#252;ssten nur die Clienten)
+* Beschreibung wird noch nicht &#252;bertragen.
+
+=== Kurzbericht ===
+Anonsten ist ganz wichtig f&#252;r viele Beispielequelltext von RakNet,  
+dass man sie selber auf die aktuelle Version
+portieren muss
+daf&#252;r befindet sich im Raknet verzeichniss (wenn man die source  
+ausgecheckt hat zumindest)
+die wichtige Datei 2.x_to_3.x_upgrade.txt
+in der alle wichtigen &#196;nderungen drin stehen.
+
+Wichtig ist au&#223;erdem noch die Balance zwichen
+RakPeer-&gt;Receive
+und
+RakPeer-&gt;DeallocatePacket
+
+Ruft man Deallocate einmal zu viel auf, gibt es ein Segmentation fault
+aber ruft man es zu wenig auf, dann werden Pakete nie aus der FiFO-queue
+ausgelesen und man l&#228;fut immer nur schleifen mit dem einen selben Paket.
+
+Hier muss ich noch mal alles durcschauen ob alles in Balance ist ;-)
+
+gby
+Matthias
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/trinitas-developer/attachments/20081202/f4ce1a6b/attachment.html">https://lists.berlios.de/pipermail/trinitas-developer/attachments/20081202/f4ce1a6b/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#22">[ date ]</a>
+              <a href="thread.html#22">[ thread ]</a>
+              <a href="subject.html#22">[ subject ]</a>
+              <a href="author.html#22">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/trinitas-developer">More information about the Trinitas-developer
+mailing list</a><br>
+</body></html>

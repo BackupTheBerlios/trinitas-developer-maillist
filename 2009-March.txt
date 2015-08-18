@@ -1,0 +1,46 @@
+From trinitas at oswald-crossmedia.de  Wed Mar 18 18:27:41 2009
+From: trinitas at oswald-crossmedia.de (Juergen Oswald)
+Date: Wed, 18 Mar 2009 18:27:41 +0100
+Subject: [Trinitas-developer] 3D-Modell mit Animation - maya 2 Blender
+Message-ID: <49C12F0D.4090207@oswald-crossmedia.de>
+
+Hallo Leute,
+
+ich habe eine M?glichkeit gefunden eine animierte Geometrie
+aus Maya nach Blender zu transferieren.
+Das schein so weit auch zu funzen.
+Jetzt wollte ich die Animation von Blender
+nach Irredit transferieren.
+Da hab ich nun Probleme.
+Ich bin ich so der Belderfuzi (kann ja aber noch werden ;-)
+Habs probiert mit Direct X und Collada.
+Beide kann ich zwar importieren, aber ohne Animation.
+Dann hab ich in Blender direct noch ein Kugel
+dazu gemacht und die auch animiert.
+Wenn ich jetzt die Datei in Irredit importiere
+bewegt sich die Kugel so wie animiert,
+aber das Modell ist immer noch statisch.
+
+hat da jemand eine Idee ?
+
+Vlt jemand der sich mit Blender auskennt.
+Soll sich melden, ich kann ihm dann die Datei schicken.
+
+Gru? und Segen
+Juergen
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20090318/1a3631bb/attachment.html>
+
+From trinitas at oswald-crossmedia.de  Sun Mar 29 11:54:22 2009
+From: trinitas at oswald-crossmedia.de (Juergen Oswald)
+Date: Sun, 29 Mar 2009 11:54:22 +0200
+Subject: [Trinitas-developer] hat sich erledigt
+Message-ID: <49CF454E.7030703@oswald-crossmedia.de>
+
+hat sich erledigt
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20090329/c9189b6c/attachment.html>
+

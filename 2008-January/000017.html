@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Trinitas-developer] brauche eure Hilfe f&#252;r Classendesign
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/trinitas-developer/2008-January/index.html" >
+   <LINK REL="made" HREF="mailto:trinitas-developer%40lists.berlios.de?Subject=Re%3A%20%5BTrinitas-developer%5D%20%3D%3Fiso-8859-15%3Fq%3Fbrauche_eure_Hilfe_f%3DFCr_Cla%3F%3D%0A%09%3D%3Fiso-8859-15%3Fq%3Fssendesign%3F%3D&In-Reply-To=%3C477AAA49.1010801%40projectconceptor.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Trinitas-developer] brauche eure Hilfe f&#252;r Classendesign</H1>
+    <B>Paradoxon</B> 
+    <A HREF="mailto:trinitas-developer%40lists.berlios.de?Subject=Re%3A%20%5BTrinitas-developer%5D%20%3D%3Fiso-8859-15%3Fq%3Fbrauche_eure_Hilfe_f%3DFCr_Cla%3F%3D%0A%09%3D%3Fiso-8859-15%3Fq%3Fssendesign%3F%3D&In-Reply-To=%3C477AAA49.1010801%40projectconceptor.de%3E"
+       TITLE="[Trinitas-developer] brauche eure Hilfe f&#252;r Classendesign">mail at projectconceptor.de
+       </A><BR>
+    <I>Tue Jan  1 22:02:01 CET 2008</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17">[ date ]</a>
+              <a href="thread.html#17">[ thread ]</a>
+              <a href="subject.html#17">[ subject ]</a>
+              <a href="author.html#17">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>He Leute,
+
+wir werden jetzt langsam mit dem Klassendesign anfangen.
+D.h. es geht richtig los .. so mit Spieleprogramierung. :)
+
+Ich warte zwar noch auf einige Mokups oder Ergebnisse von Mokups,
+aber das wird sich hoffentlich bald geben.
+
+Aber f&#252;r das Klassendesign Ben&#246;tigen wir Ideen bzw. Infos vor allem f&#252;r 
+die Leute,
+die sich in den entsprechenden  Bereichen eingearbeitet haben.
+
+Also erstens die Klasse der Objekte im Spiel. Also so was wie der Spieler,
+andere Spieler, Gegenst&#228;nde, Werkzeuge usw.
+Hierbei ist vor allem wichtig welche Daten wir bereits in den entsprechenden
+Engineformaten vorliegen haben..
+
+Wir werden wahrscheinlich eine Grundklasse ben&#246;tigen, die nur die
+bounding box oder ein sehr niedrig aufgel&#246;stest collisionsmesh hat. Ich 
+nenns mal BasicObjekt
+
+Das ist notwendig, weil der Server nur die Collisionsmeshs ben&#246;tigt um 
+Dinge auszurechnen
+Da w&#228;re es nicht so sinnvoll auch die Meshes und Texturen zu laden.
+
+BasicObjekt
+ &gt;|- mStatus //aktueller Status in dem sich das Objekt befindet
+ &gt;|-collisionsMeshVector //vector mit den zum Status passenden 
+Collsisionsmeshes
+ &gt;|-??? (bitte vervollst&#228;ndigen)
+
+NormalesObjekt abgeleitet von BasicObjekt
+ &gt;|- renderMeshVector //vector mit allen RenderMeshes
+ &gt;|- texturVector
+ &gt;|-shaderVector
+ &gt;|-soundEffektVector
+
+Oder k&#246;nnen wir einfach das Normale Objekt von einem Irrlicht objekt 
+ableiten?
+welches bereits alle diese F&#228;higkeiten besitzt?
+
+Simon, was sagst du, du hast ja schon mir Irrlicht gearbeitet und sogar 
+schon
+ein Animierte Figur eingebunden...
+
+
+Dann noch eine Frage/ Idee oder wie auch immer
+Wir br&#228;uchten unser eigenes MapObjekt oder?
+
+MapObjekt abgeleitet von BasicObjekt
+ &gt;|- charakterVector
+ &gt;|- objekteVector
+ &gt;|- maplogikVector (quests, Map ziele usw.)
+ &gt;|- soundVector (Songs usw)
+ &gt;|- Heighmap
+ &gt;|- ...??
+
+
+Alles nur angedachte Sachen, ich hoffe, ihr k&#246;nnt mir einige Ideen oder 
+Richtigstellungen zur&#252;cksenden.
+
+Gottes Segen
+Matthias
+
+
+
+
+
+-- 
+Matthias Lindner
+Lazarettstr. 10
+
+45127 Essen
+
+Tel/Fax.: 0201-2480986
+
+
+www.online-mit-gott.de
+trinitas.berlios.de
+www.fishers-girl.de
+www.projectconceptor.de
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#17">[ date ]</a>
+              <a href="thread.html#17">[ thread ]</a>
+              <a href="subject.html#17">[ subject ]</a>
+              <a href="author.html#17">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/trinitas-developer">More information about the Trinitas-developer
+mailing list</a><br>
+</body></html>

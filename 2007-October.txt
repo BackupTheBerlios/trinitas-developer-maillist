@@ -1,0 +1,551 @@
+From mail at projectconceptor.de  Wed Oct  3 16:28:26 2007
+From: mail at projectconceptor.de (Paradoxon)
+Date: Wed, 03 Oct 2007 16:28:26 +0200
+Subject: [Trinitas-developer] test
+Message-ID: <4703A70A.3090204@projectconceptor.de>
+
+
+-- 
+Matthias Lindner
+Lazarettstr. 10
+
+45127 Essen
+
+Tel/Fax.: 0201-2480986
+Mail:	mail at projectconceptor.de
+
+
+www.online-mit-gott.de
+trinitas.berlios.de
+www.fishers-girl.de
+www.projectconceptor.de
+
+
+
+From mail at projectconceptor.de  Thu Oct 11 16:27:01 2007
+From: mail at projectconceptor.de (Paradoxon)
+Date: Thu, 11 Oct 2007 16:27:01 +0200
+Subject: [Trinitas-developer] [Trinitas-main] Lua,
+	Probleme und Funktionen
+In-Reply-To: <816742552@web.de>
+References: <816742552@web.de>
+Message-ID: <470E32B5.4000905@projectconceptor.de>
+
+He David,
+
+danke f?r deine ganze Arbeit!!
+
+Eine Datenbank w?re nat?rlich eine L?sung, f?r das von dir geschilderte 
+System.
+Wir haben auch bereits dar?ber nachgedacht.
+
+Aber nat?rlich w?rde es genausogut ohne Datenbank funktionieren, wenn 
+man die Luascripte entsprechender entwirft
+und beim Einbinden wie ein Plugin behandelt.. d.h. jedes neu 
+eingebundene Lua Script erh?lt eine ID im Programm, ?ber welche dann der 
+eineindeutige Zugriff erfolgt.
+
+Danke f?r den Hinweis mit der Datenbank und wir werden uns da auf jeden 
+Fall noch einmal schlauer machen.
+
+gby
+Matthias
+
+
+
+davidjablonski at web.de schrieb:
+> Na ihr,
+>
+> ich hab mich bisschen mit LUA in C++ und so besch?ftigt.
+> Erstmal wollte ich ?ber meine bisherigen "Erfolge" sprechen.
+> Es ist mir gelungen - ja gut Simon hat es viel schneller hingekriegt, aber hat mir nicht geholfen :) -
+> Lua-Skripte mit C++ aufzurufen und auszuf?hren.
+> Ferner habe ich es geschafft, in LUA  C++-Funktionen aufzurufen. So geht es:
+>
+> In C++ registriert man erstmal eine Funktion, die auch in Lua aufgerufen werden kann:
+>
+> lua_register(L,"addiere",cAddiere);
+>
+> "Addiere" ist hierbei das, was in Lua steht, zB Addiere(5,10)
+> cAddiere ist der Name der C++-Funktion, die wir aufrufen wollen.
+> Die Funktion ist aber nicht "normal", sondern sieht so aus:
+>
+> static int cAddiere(lua_State* L)
+> {
+> 	double a,b;
+> 	a = lua_tonumber(L, 1);
+> 	b = lua_tonumber(L, 2);
+> 	lua_pushnumber(L,a+b);
+> 	return 1;
+> }
+>
+> 1 und 2 sind dabei Indizes des von C++ und LUA gemeinsam benutzten Stacks.
+> Als Lua-Skript hat man dann folgendes:
+>
+> ergebnis=addiere(100,200)
+> print ergebnis
+>
+> (wundert euch nicht ?ber die fehlenden ;
+> die KANN man machen, und ich als C++-
+> Hasser lasse die bewusst weg :P )
+>
+> Et voil?...als Ausgabe erh?lt man 300 :)
+> Wenn ihr euch selbst ?berzeugen wollt:
+>   
+>>>>> Trinitas\tests\lua\basics
+>>>>>           
+>
+> Ok, das waren schon die Erfolge.
+> Jetzt die Probleme.
+> Aus Erfahrung mit Lua kann ich sagen, dass wir
+> ebenfalls MySQL brauchen. Der Grund: Damit C++
+> wei?, welche Skripte aufgerufen werden sollen!
+> Beispiel:
+> Ein Spieler benutzt eine Axt auf einen Baum.
+> F?r diesen Fall gibt es (bzw. wird es geben) diese Funktion (in LUA):
+>
+> Function UseItemWithItem(SourceItem, TargetItem, User)
+>    ....
+> End Function
+>
+> Da es in allen Skripten nicht nur einmal diese Funktion geben wird,
+> wird dann in der MySQL-Tabelle gespeichert, welche Lua-Skripte
+> mit welchen Objekten zu tun haben.
+> Dies ist nur ein Vorschlag, den ich f?r sehr gut halte. Falls euch was
+> besseres einf?llt, nur zu :P
+>
+>
+> Momentan arbeite ich an einer C++-Funktion, die eine Lua-Funktion aufruft,
+> die beliebig viele Parameter besitzen kann. Soweit bin ich schon:
+>
+> void CallLuaFunction(lua_State* lState, const char* fncName, int nResults, ...)
+> {
+>     int i;
+>     char* param;
+>     lua_getfield(L, LUA_GLOBALSINDEX, fncName);
+>     va_list args;
+>     va_start(args,param);
+>     while(param!=NULL)
+>     {
+>         i++;
+>         lua_pushstring(lState,param);
+>         param = va_arg(args,char*);
+>     }
+>     va_end(args);
+>     lua_call(lState,i,nResults);
+> }
+>
+> Habs noch nicht getestet ^^
+> So das wars, Gottes reichen Segen f?r euch alle,
+> David Jablonski
+> ______________________________________________________________________________
+> Jetzt neu! Im riesigen WEB.DE Club SmartDrive Dateien freigeben und mit 
+> Freunden teilen! http://www.freemail.web.de/club/smartdrive_ttc.htm/?mc=021134
+>
+> _______________________________________________
+> Trinitas-main mailing list
+> Trinitas-main at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/trinitas-main
+>
+>   
+
+
+-- 
+Matthias Lindner
+Lazarettstr. 10
+
+45127 Essen
+
+Tel/Fax.: 0201-2480986
+Mail:	mail at projectconceptor.de
+
+
+www.online-mit-gott.de
+trinitas.berlios.de
+www.fishers-girl.de
+www.projectconceptor.de
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20071011/d778a24d/attachment.html>
+
+From davidjablonski at web.de  Thu Oct 11 20:37:08 2007
+From: davidjablonski at web.de (davidjablonski at web.de)
+Date: Thu, 11 Oct 2007 20:37:08 +0200
+Subject: [Trinitas-developer] FW:  Lua, Probleme und Funktionen
+Message-ID: <27105812.1192127829908.JavaMail.fmail@fmcert01.dlan.cinetic.de>
+
+Hallo,
+
+nun. An diesem Punkt habe ich mal eine Frage:
+Soll das Spiel so gemacht werden, dass jeder 
+x-beliebige Spieler einen eigenen Server aufmachen
+kann oder dass es einen zentralen Server gibt?
+Ich f?nde ersteres besser, weil die Spieler in diesem
+Fall ja auch dazu animiert werden, selber kreativ zu
+werden..und ich denke, dass jeder von uns wei?, dass
+eine gro?e Spielerschaft mehr erschaffen kann, als wir
+zu tr?umen wagen.
+
+Nun gut, eine extra Datenbank ist etwas ?bertrieben...
+Wie w?re es mit einem - und ich meine EINEM - Lua-Skript
+wo alle Zuordnungen drinne stehen? :)
+
+Gut gut...Ah und Lua-Funktionen mit C++ aufrufen klappt
+nun auch prima!
+
+Gottes reichen Segen euch allen,
+David
+
+
+> -----Urspr?ngliche Nachricht-----
+> Von: Paradoxon <mail at projectconceptor.de>
+> Gesendet: 11.10.07 16:32:14
+> An: trinitas-developer at lists.berlios.de
+> Betreff: Re: [Trinitas-developer] [Trinitas-main] Lua, Probleme und Funktionen
+He David,
+> 
+> danke f?r deine ganze Arbeit!!
+> 
+> Eine Datenbank w?re nat?rlich eine L?sung, f?r das von dir geschilderte
+> System.
+> Wir haben auch bereits dar?ber nachgedacht.
+> 
+> Aber nat?rlich w?rde es genausogut ohne Datenbank funktionieren, wenn
+> man die Luascripte entsprechender entwirft
+> und beim Einbinden wie ein Plugin behandelt.. d.h. jedes neu
+> eingebundene Lua Script erh?lt eine ID im Programm, ?ber welche dann
+> der eineindeutige Zugriff erfolgt.
+> 
+> Danke f?r den Hinweis mit der Datenbank und wir werden uns da auf jeden
+> Fall noch einmal schlauer machen.
+> 
+> gby
+> Matthias
+> 
+> 
+> 
+> davidjablonski at web.de schrieb:
+>  Na ihr,
+> ich hab mich bisschen mit LUA in C++ und so besch?ftigt.
+> Erstmal wollte ich ?ber meine bisherigen "Erfolge" sprechen.
+> Es ist mir gelungen - ja gut Simon hat es viel schneller hingekriegt, aber hat mir nicht geholfen :) -
+> Lua-Skripte mit C++ aufzurufen und auszuf?hren.
+> Ferner habe ich es geschafft, in LUA C++-Funktionen aufzurufen. So geht es:
+> In C++ registriert man erstmal eine Funktion, die auch in Lua aufgerufen werden kann:
+> lua_register(L,"addiere",cAddiere);
+> "Addiere" ist hierbei das, was in Lua steht, zB Addiere(5,10)
+> cAddiere ist der Name der C++-Funktion, die wir aufrufen wollen.
+> Die Funktion ist aber nicht "normal", sondern sieht so aus:
+> static int cAddiere(lua_State* L)
+> {
+>  double a,b;
+>  a = lua_tonumber(L, 1);
+>  b = lua_tonumber(L, 2);
+>  lua_pushnumber(L,a+b);
+>  return 1;
+> }
+> 1 und 2 sind dabei Indizes des von C++ und LUA gemeinsam benutzten Stacks.
+> Als Lua-Skript hat man dann folgendes:
+> ergebnis=addiere(100,200)
+> print ergebnis
+> (wundert euch nicht ?ber die fehlenden ;
+> die KANN man machen, und ich als C++-
+> Hasser lasse die bewusst weg :P )
+> Et voil?...als Ausgabe erh?lt man 300 :)
+> Wenn ihr euch selbst ?berzeugen wollt:
+>  
+>  
+>  
+>  
+>  
+>  Trinitas\tests\lua\basics
+>  
+>  
+>  
+>  
+>  
+>  
+> Ok, das waren schon die Erfolge.
+> Jetzt die Probleme.
+> Aus Erfahrung mit Lua kann ich sagen, dass wir
+> ebenfalls MySQL brauchen. Der Grund: Damit C++
+> wei?, welche Skripte aufgerufen werden sollen!
+> Beispiel:
+> Ein Spieler benutzt eine Axt auf einen Baum.
+> F?r diesen Fall gibt es (bzw. wird es geben) diese Funktion (in LUA):
+> Function UseItemWithItem(SourceItem, TargetItem, User)
+>  ....
+> End Function
+> Da es in allen Skripten nicht nur einmal diese Funktion geben wird,
+> wird dann in der MySQL-Tabelle gespeichert, welche Lua-Skripte
+> mit welchen Objekten zu tun haben.
+> Dies ist nur ein Vorschlag, den ich f?r sehr gut halte. Falls euch was
+> besseres einf?llt, nur zu :P
+> Momentan arbeite ich an einer C++-Funktion, die eine Lua-Funktion aufruft,
+> die beliebig viele Parameter besitzen kann. Soweit bin ich schon:
+> void CallLuaFunction(lua_State* lState, const char* fncName, int nResults, ...)
+> {
+>  int i;
+>  char* param;
+>  lua_getfield(L, LUA_GLOBALSINDEX, fncName);
+>  va_list args;
+>  va_start(args,param);
+>  while(param!=NULL)
+>  {
+>  i++;
+>  lua_pushstring(lState,param);
+>  param = va_arg(args,char*);
+>  }
+>  va_end(args);
+>  lua_call(lState,i,nResults);
+> }
+> Habs noch nicht getestet ^^
+> So das wars, Gottes reichen Segen f?r euch alle,
+> David Jablonski
+> ______________________________________________________________________________
+> Jetzt neu! Im riesigen WEB.DE Club SmartDrive Dateien freigeben und mit Freunden teilen! http://www.freemail.web.de/club/smartdrive_ttc.htm/?mc=021134
+> _______________________________________________
+> Trinitas-main mailing list
+> Trinitas-main at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/trinitas-main
+>  
+> 
+> 
+> -- Matthias Lindner
+> Lazarettstr. 10
+> 45127 Essen
+> Tel/Fax.: 0201-2480986
+> Mail: mail at projectconceptor.de
+> www.online-mit-gott.de
+> trinitas.berlios.de
+> www.fishers-girl.de
+> www.projectconceptor.de
+> 
+> -----------------------------------------------------------------
+> _______________________________________________
+> Trinitas-developer mailing list
+> Trinitas-developer at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/trinitas-developer
+> 
+______________________________________________________________________
+XXL-Speicher, PC-Virenschutz, Spartarife & mehr: Nur im WEB.DE Club!		
+Jetzt testen! http://produkte.web.de/club/?mc=021130
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/pkcs7-signature
+Size: 1768 bytes
+Desc: S/MIME Cryptographic Signature
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20071011/81297a55/attachment.bin>
+
+From mail at projectconceptor.de  Thu Oct 11 21:56:45 2007
+From: mail at projectconceptor.de (Paradoxon)
+Date: Thu, 11 Oct 2007 21:56:45 +0200
+Subject: [Trinitas-developer] FW:  Lua, Probleme und Funktionen
+In-Reply-To: <27105812.1192127829908.JavaMail.fmail@fmcert01.dlan.cinetic.de>
+References: <27105812.1192127829908.JavaMail.fmail@fmcert01.dlan.cinetic.de>
+Message-ID: <470E7FFD.4030204@projectconceptor.de>
+
+Also das steht alles schon im Gamedesigndokument ;-)
+
+Ja aber jeder Spieler wird in der Lage sein einen eigenen Server (auch 
+dedicated) aufzumachen..
+im Internet m?ssen wir dann sehen , dass es aber einen haupserver gibt, 
+der dann die einzelnen aufgemachten Server verwaltet.. damit man 
+?berhaupt server im Internet finden kann.
+
+gby
+Matthias
+
+davidjablonski at web.de schrieb:
+> Hallo,
+>
+> nun. An diesem Punkt habe ich mal eine Frage:
+> Soll das Spiel so gemacht werden, dass jeder 
+> x-beliebige Spieler einen eigenen Server aufmachen
+> kann oder dass es einen zentralen Server gibt?
+> Ich f?nde ersteres besser, weil die Spieler in diesem
+> Fall ja auch dazu animiert werden, selber kreativ zu
+> werden..und ich denke, dass jeder von uns wei?, dass
+> eine gro?e Spielerschaft mehr erschaffen kann, als wir
+> zu tr?umen wagen.
+>
+> Nun gut, eine extra Datenbank ist etwas ?bertrieben...
+> Wie w?re es mit einem - und ich meine EINEM - Lua-Skript
+> wo alle Zuordnungen drinne stehen? :)
+>
+> Gut gut...Ah und Lua-Funktionen mit C++ aufrufen klappt
+> nun auch prima!
+>
+> Gottes reichen Segen euch allen,
+> David
+>
+>
+>   
+>> -----Urspr?ngliche Nachricht-----
+>> Von: Paradoxon <mail at projectconceptor.de>
+>> Gesendet: 11.10.07 16:32:14
+>> An: trinitas-developer at lists.berlios.de
+>> Betreff: Re: [Trinitas-developer] [Trinitas-main] Lua, Probleme und Funktionen
+>>     
+> He David,
+>   
+>> danke f?r deine ganze Arbeit!!
+>>
+>> Eine Datenbank w?re nat?rlich eine L?sung, f?r das von dir geschilderte
+>> System.
+>> Wir haben auch bereits dar?ber nachgedacht.
+>>
+>> Aber nat?rlich w?rde es genausogut ohne Datenbank funktionieren, wenn
+>> man die Luascripte entsprechender entwirft
+>> und beim Einbinden wie ein Plugin behandelt.. d.h. jedes neu
+>> eingebundene Lua Script erh?lt eine ID im Programm, ?ber welche dann
+>> der eineindeutige Zugriff erfolgt.
+>>
+>> Danke f?r den Hinweis mit der Datenbank und wir werden uns da auf jeden
+>> Fall noch einmal schlauer machen.
+>>
+>> gby
+>> Matthias
+>>
+>>
+>>
+>> davidjablonski at web.de schrieb:
+>>  Na ihr,
+>> ich hab mich bisschen mit LUA in C++ und so besch?ftigt.
+>> Erstmal wollte ich ?ber meine bisherigen "Erfolge" sprechen.
+>> Es ist mir gelungen - ja gut Simon hat es viel schneller hingekriegt, aber hat mir nicht geholfen :) -
+>> Lua-Skripte mit C++ aufzurufen und auszuf?hren.
+>> Ferner habe ich es geschafft, in LUA C++-Funktionen aufzurufen. So geht es:
+>> In C++ registriert man erstmal eine Funktion, die auch in Lua aufgerufen werden kann:
+>> lua_register(L,"addiere",cAddiere);
+>> "Addiere" ist hierbei das, was in Lua steht, zB Addiere(5,10)
+>> cAddiere ist der Name der C++-Funktion, die wir aufrufen wollen.
+>> Die Funktion ist aber nicht "normal", sondern sieht so aus:
+>> static int cAddiere(lua_State* L)
+>> {
+>>  double a,b;
+>>  a = lua_tonumber(L, 1);
+>>  b = lua_tonumber(L, 2);
+>>  lua_pushnumber(L,a+b);
+>>  return 1;
+>> }
+>> 1 und 2 sind dabei Indizes des von C++ und LUA gemeinsam benutzten Stacks.
+>> Als Lua-Skript hat man dann folgendes:
+>> ergebnis=addiere(100,200)
+>> print ergebnis
+>> (wundert euch nicht ?ber die fehlenden ;
+>> die KANN man machen, und ich als C++-
+>> Hasser lasse die bewusst weg :P )
+>> Et voil?...als Ausgabe erh?lt man 300 :)
+>> Wenn ihr euch selbst ?berzeugen wollt:
+>>  
+>>  
+>>  
+>>  
+>>  
+>>  Trinitas\tests\lua\basics
+>>  
+>>  
+>>  
+>>  
+>>  
+>>  
+>> Ok, das waren schon die Erfolge.
+>> Jetzt die Probleme.
+>> Aus Erfahrung mit Lua kann ich sagen, dass wir
+>> ebenfalls MySQL brauchen. Der Grund: Damit C++
+>> wei?, welche Skripte aufgerufen werden sollen!
+>> Beispiel:
+>> Ein Spieler benutzt eine Axt auf einen Baum.
+>> F?r diesen Fall gibt es (bzw. wird es geben) diese Funktion (in LUA):
+>> Function UseItemWithItem(SourceItem, TargetItem, User)
+>>  ....
+>> End Function
+>> Da es in allen Skripten nicht nur einmal diese Funktion geben wird,
+>> wird dann in der MySQL-Tabelle gespeichert, welche Lua-Skripte
+>> mit welchen Objekten zu tun haben.
+>> Dies ist nur ein Vorschlag, den ich f?r sehr gut halte. Falls euch was
+>> besseres einf?llt, nur zu :P
+>> Momentan arbeite ich an einer C++-Funktion, die eine Lua-Funktion aufruft,
+>> die beliebig viele Parameter besitzen kann. Soweit bin ich schon:
+>> void CallLuaFunction(lua_State* lState, const char* fncName, int nResults, ...)
+>> {
+>>  int i;
+>>  char* param;
+>>  lua_getfield(L, LUA_GLOBALSINDEX, fncName);
+>>  va_list args;
+>>  va_start(args,param);
+>>  while(param!=NULL)
+>>  {
+>>  i++;
+>>  lua_pushstring(lState,param);
+>>  param = va_arg(args,char*);
+>>  }
+>>  va_end(args);
+>>  lua_call(lState,i,nResults);
+>> }
+>> Habs noch nicht getestet ^^
+>> So das wars, Gottes reichen Segen f?r euch alle,
+>> David Jablonski
+>> ______________________________________________________________________________
+>> Jetzt neu! Im riesigen WEB.DE Club SmartDrive Dateien freigeben und mit Freunden teilen! http://www.freemail.web.de/club/smartdrive_ttc.htm/?mc=021134
+>> _______________________________________________
+>> Trinitas-main mailing list
+>> Trinitas-main at lists.berlios.de
+>> https://lists.berlios.de/mailman/listinfo/trinitas-main
+>>  
+>>
+>>
+>> -- Matthias Lindner
+>> Lazarettstr. 10
+>> 45127 Essen
+>> Tel/Fax.: 0201-2480986
+>> Mail: mail at projectconceptor.de
+>> www.online-mit-gott.de
+>> trinitas.berlios.de
+>> www.fishers-girl.de
+>> www.projectconceptor.de
+>>
+>> -----------------------------------------------------------------
+>> _______________________________________________
+>> Trinitas-developer mailing list
+>> Trinitas-developer at lists.berlios.de
+>> https://lists.berlios.de/mailman/listinfo/trinitas-developer
+>>
+>>     
+> ______________________________________________________________________
+> XXL-Speicher, PC-Virenschutz, Spartarife & mehr: Nur im WEB.DE Club!		
+> Jetzt testen! http://produkte.web.de/club/?mc=021130
+>
+>   
+> ------------------------------------------------------------------------
+>
+> _______________________________________________
+> Trinitas-developer mailing list
+> Trinitas-developer at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/trinitas-developer
+>   
+
+
+-- 
+Matthias Lindner
+Lazarettstr. 10
+
+45127 Essen
+
+Tel/Fax.: 0201-2480986
+Mail:	mail at projectconceptor.de
+
+
+www.online-mit-gott.de
+trinitas.berlios.de
+www.fishers-girl.de
+www.projectconceptor.de
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/trinitas-developer/attachments/20071011/6d8f8b59/attachment.html>
+

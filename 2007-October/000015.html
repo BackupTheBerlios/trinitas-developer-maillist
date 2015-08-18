@@ -1,0 +1,224 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Trinitas-developer] FW:  Lua, Probleme und Funktionen
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/trinitas-developer/2007-October/index.html" >
+   <LINK REL="made" HREF="mailto:trinitas-developer%40lists.berlios.de?Subject=Re%3A%20%5BTrinitas-developer%5D%20FW%3A%20%20Lua%2C%20Probleme%20und%20Funktionen&In-Reply-To=%3C27105812.1192127829908.JavaMail.fmail%40fmcert01.dlan.cinetic.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000014.html">
+   <LINK REL="Next"  HREF="000016.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Trinitas-developer] FW:  Lua, Probleme und Funktionen</H1>
+    <B>davidjablonski at web.de</B> 
+    <A HREF="mailto:trinitas-developer%40lists.berlios.de?Subject=Re%3A%20%5BTrinitas-developer%5D%20FW%3A%20%20Lua%2C%20Probleme%20und%20Funktionen&In-Reply-To=%3C27105812.1192127829908.JavaMail.fmail%40fmcert01.dlan.cinetic.de%3E"
+       TITLE="[Trinitas-developer] FW:  Lua, Probleme und Funktionen">davidjablonski at web.de
+       </A><BR>
+    <I>Thu Oct 11 20:37:08 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000014.html">[Trinitas-developer] [Trinitas-main] Lua,	Probleme und Funktionen
+</A></li>
+        <LI>Next message: <A HREF="000016.html">[Trinitas-developer] FW:  Lua, Probleme und Funktionen
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15">[ date ]</a>
+              <a href="thread.html#15">[ thread ]</a>
+              <a href="subject.html#15">[ subject ]</a>
+              <a href="author.html#15">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo,
+
+nun. An diesem Punkt habe ich mal eine Frage:
+Soll das Spiel so gemacht werden, dass jeder 
+x-beliebige Spieler einen eigenen Server aufmachen
+kann oder dass es einen zentralen Server gibt?
+Ich f&#228;nde ersteres besser, weil die Spieler in diesem
+Fall ja auch dazu animiert werden, selber kreativ zu
+werden..und ich denke, dass jeder von uns wei&#223;, dass
+eine gro&#223;e Spielerschaft mehr erschaffen kann, als wir
+zu tr&#228;umen wagen.
+
+Nun gut, eine extra Datenbank ist etwas &#252;bertrieben...
+Wie w&#228;re es mit einem - und ich meine EINEM - Lua-Skript
+wo alle Zuordnungen drinne stehen? :)
+
+Gut gut...Ah und Lua-Funktionen mit C++ aufrufen klappt
+nun auch prima!
+
+Gottes reichen Segen euch allen,
+David
+
+
+&gt;<i> -----Urspr&#252;ngliche Nachricht-----
+</I>&gt;<i> Von: Paradoxon &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/trinitas-developer">mail at projectconceptor.de</A>&gt;
+</I>&gt;<i> Gesendet: 11.10.07 16:32:14
+</I>&gt;<i> An: <A HREF="https://lists.berlios.de/mailman/listinfo/trinitas-developer">trinitas-developer at lists.berlios.de</A>
+</I>&gt;<i> Betreff: Re: [Trinitas-developer] [Trinitas-main] Lua, Probleme und Funktionen
+</I>He David,
+&gt;<i> 
+</I>&gt;<i> danke f&#252;r deine ganze Arbeit!!
+</I>&gt;<i> 
+</I>&gt;<i> Eine Datenbank w&#228;re nat&#252;rlich eine L&#246;sung, f&#252;r das von dir geschilderte
+</I>&gt;<i> System.
+</I>&gt;<i> Wir haben auch bereits dar&#252;ber nachgedacht.
+</I>&gt;<i> 
+</I>&gt;<i> Aber nat&#252;rlich w&#252;rde es genausogut ohne Datenbank funktionieren, wenn
+</I>&gt;<i> man die Luascripte entsprechender entwirft
+</I>&gt;<i> und beim Einbinden wie ein Plugin behandelt.. d.h. jedes neu
+</I>&gt;<i> eingebundene Lua Script erh&#228;lt eine ID im Programm, &#252;ber welche dann
+</I>&gt;<i> der eineindeutige Zugriff erfolgt.
+</I>&gt;<i> 
+</I>&gt;<i> Danke f&#252;r den Hinweis mit der Datenbank und wir werden uns da auf jeden
+</I>&gt;<i> Fall noch einmal schlauer machen.
+</I>&gt;<i> 
+</I>&gt;<i> gby
+</I>&gt;<i> Matthias
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/trinitas-developer">davidjablonski at web.de</A> schrieb:
+</I>&gt;<i>  Na ihr,
+</I>&gt;<i> ich hab mich bisschen mit LUA in C++ und so besch&#228;ftigt.
+</I>&gt;<i> Erstmal wollte ich &#252;ber meine bisherigen &quot;Erfolge&quot; sprechen.
+</I>&gt;<i> Es ist mir gelungen - ja gut Simon hat es viel schneller hingekriegt, aber hat mir nicht geholfen :) -
+</I>&gt;<i> Lua-Skripte mit C++ aufzurufen und auszuf&#252;hren.
+</I>&gt;<i> Ferner habe ich es geschafft, in LUA C++-Funktionen aufzurufen. So geht es:
+</I>&gt;<i> In C++ registriert man erstmal eine Funktion, die auch in Lua aufgerufen werden kann:
+</I>&gt;<i> lua_register(L,&quot;addiere&quot;,cAddiere);
+</I>&gt;<i> &quot;Addiere&quot; ist hierbei das, was in Lua steht, zB Addiere(5,10)
+</I>&gt;<i> cAddiere ist der Name der C++-Funktion, die wir aufrufen wollen.
+</I>&gt;<i> Die Funktion ist aber nicht &quot;normal&quot;, sondern sieht so aus:
+</I>&gt;<i> static int cAddiere(lua_State* L)
+</I>&gt;<i> {
+</I>&gt;<i>  double a,b;
+</I>&gt;<i>  a = lua_tonumber(L, 1);
+</I>&gt;<i>  b = lua_tonumber(L, 2);
+</I>&gt;<i>  lua_pushnumber(L,a+b);
+</I>&gt;<i>  return 1;
+</I>&gt;<i> }
+</I>&gt;<i> 1 und 2 sind dabei Indizes des von C++ und LUA gemeinsam benutzten Stacks.
+</I>&gt;<i> Als Lua-Skript hat man dann folgendes:
+</I>&gt;<i> ergebnis=addiere(100,200)
+</I>&gt;<i> print ergebnis
+</I>&gt;<i> (wundert euch nicht &#252;ber die fehlenden ;
+</I>&gt;<i> die KANN man machen, und ich als C++-
+</I>&gt;<i> Hasser lasse die bewusst weg :P )
+</I>&gt;<i> Et voil&#224;...als Ausgabe erh&#228;lt man 300 :)
+</I>&gt;<i> Wenn ihr euch selbst &#252;berzeugen wollt:
+</I>&gt;<i>  
+</I>&gt;<i>  
+</I>&gt;<i>  
+</I>&gt;<i>  
+</I>&gt;<i>  
+</I>&gt;<i>  Trinitas\tests\lua\basics
+</I>&gt;<i>  
+</I>&gt;<i>  
+</I>&gt;<i>  
+</I>&gt;<i>  
+</I>&gt;<i>  
+</I>&gt;<i>  
+</I>&gt;<i> Ok, das waren schon die Erfolge.
+</I>&gt;<i> Jetzt die Probleme.
+</I>&gt;<i> Aus Erfahrung mit Lua kann ich sagen, dass wir
+</I>&gt;<i> ebenfalls MySQL brauchen. Der Grund: Damit C++
+</I>&gt;<i> wei&#223;, welche Skripte aufgerufen werden sollen!
+</I>&gt;<i> Beispiel:
+</I>&gt;<i> Ein Spieler benutzt eine Axt auf einen Baum.
+</I>&gt;<i> F&#252;r diesen Fall gibt es (bzw. wird es geben) diese Funktion (in LUA):
+</I>&gt;<i> Function UseItemWithItem(SourceItem, TargetItem, User)
+</I>&gt;<i>  ....
+</I>&gt;<i> End Function
+</I>&gt;<i> Da es in allen Skripten nicht nur einmal diese Funktion geben wird,
+</I>&gt;<i> wird dann in der MySQL-Tabelle gespeichert, welche Lua-Skripte
+</I>&gt;<i> mit welchen Objekten zu tun haben.
+</I>&gt;<i> Dies ist nur ein Vorschlag, den ich f&#252;r sehr gut halte. Falls euch was
+</I>&gt;<i> besseres einf&#228;llt, nur zu :P
+</I>&gt;<i> Momentan arbeite ich an einer C++-Funktion, die eine Lua-Funktion aufruft,
+</I>&gt;<i> die beliebig viele Parameter besitzen kann. Soweit bin ich schon:
+</I>&gt;<i> void CallLuaFunction(lua_State* lState, const char* fncName, int nResults, ...)
+</I>&gt;<i> {
+</I>&gt;<i>  int i;
+</I>&gt;<i>  char* param;
+</I>&gt;<i>  lua_getfield(L, LUA_GLOBALSINDEX, fncName);
+</I>&gt;<i>  va_list args;
+</I>&gt;<i>  va_start(args,param);
+</I>&gt;<i>  while(param!=NULL)
+</I>&gt;<i>  {
+</I>&gt;<i>  i++;
+</I>&gt;<i>  lua_pushstring(lState,param);
+</I>&gt;<i>  param = va_arg(args,char*);
+</I>&gt;<i>  }
+</I>&gt;<i>  va_end(args);
+</I>&gt;<i>  lua_call(lState,i,nResults);
+</I>&gt;<i> }
+</I>&gt;<i> Habs noch nicht getestet ^^
+</I>&gt;<i> So das wars, Gottes reichen Segen f&#252;r euch alle,
+</I>&gt;<i> David Jablonski
+</I>&gt;<i> ______________________________________________________________________________
+</I>&gt;<i> Jetzt neu! Im riesigen WEB.DE Club SmartDrive Dateien freigeben und mit Freunden teilen! <A HREF="http://www.freemail.web.de/club/smartdrive_ttc.htm/?mc=021134">http://www.freemail.web.de/club/smartdrive_ttc.htm/?mc=021134</A>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Trinitas-main mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/trinitas-developer">Trinitas-main at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/trinitas-main">https://lists.berlios.de/mailman/listinfo/trinitas-main</A>
+</I>&gt;<i>  
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> -- Matthias Lindner
+</I>&gt;<i> Lazarettstr. 10
+</I>&gt;<i> 45127 Essen
+</I>&gt;<i> Tel/Fax.: 0201-2480986
+</I>&gt;<i> Mail: <A HREF="https://lists.berlios.de/mailman/listinfo/trinitas-developer">mail at projectconceptor.de</A>
+</I>&gt;<i> www.online-mit-gott.de
+</I>&gt;<i> trinitas.berlios.de
+</I>&gt;<i> www.fishers-girl.de
+</I>&gt;<i> www.projectconceptor.de
+</I>&gt;<i> 
+</I>&gt;<i> -----------------------------------------------------------------
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Trinitas-developer mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/trinitas-developer">Trinitas-developer at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/trinitas-developer">https://lists.berlios.de/mailman/listinfo/trinitas-developer</A>
+</I>&gt;<i> 
+</I>______________________________________________________________________
+XXL-Speicher, PC-Virenschutz, Spartarife &amp; mehr: Nur im WEB.DE Club!		
+Jetzt testen! <A HREF="http://produkte.web.de/club/?mc=021130">http://produkte.web.de/club/?mc=021130</A>
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/pkcs7-signature
+Size: 1768 bytes
+Desc: S/MIME Cryptographic Signature
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/trinitas-developer/attachments/20071011/81297a55/attachment.bin">https://lists.berlios.de/pipermail/trinitas-developer/attachments/20071011/81297a55/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000014.html">[Trinitas-developer] [Trinitas-main] Lua,	Probleme und Funktionen
+</A></li>
+	<LI>Next message: <A HREF="000016.html">[Trinitas-developer] FW:  Lua, Probleme und Funktionen
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15">[ date ]</a>
+              <a href="thread.html#15">[ thread ]</a>
+              <a href="subject.html#15">[ subject ]</a>
+              <a href="author.html#15">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/trinitas-developer">More information about the Trinitas-developer
+mailing list</a><br>
+</body></html>
